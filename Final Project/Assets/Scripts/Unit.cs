@@ -4,15 +4,56 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] protected float damageValue;
+    [SerializeField] protected float speed;
+    [SerializeField] protected float health
     {
-        
+        get { return health; }
+        set
+        {
+            if (value <= 0f)
+            {
+                health = 0;
+                UnitDeath();
+            }
+            else
+            {
+                health = value;
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            ResolveWallCollision();
+        }
+        else if (collision.gameObject.CompareTag("Unit"))
+        {
+            ResolveUnitCollision();
+        }
+
     }
+
+    protected void TakeDamage()
+    {
+        health -= damageValue;
+    }
+
+    protected virtual void ResolveUnitCollision()
+    {
+        Debug.Log($"{gameObject.name} collision with unit");
+    }
+
+    protected virtual void ResolveWallCollision()
+    {
+        Debug.Log($"{gameObject.name} collision with wall");
+    }
+
+    protected virtual void UnitDeath()
+    {
+        Destroy(gameObject);
+    }
+
 }

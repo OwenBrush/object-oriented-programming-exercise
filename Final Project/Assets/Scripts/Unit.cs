@@ -44,10 +44,10 @@ public class Unit : MonoBehaviour
     }
     protected void Bounce(Collision collision)
     {
-        rb.AddForce(collision.contacts[0].normal * bounceValue);
+        rb.velocity *= bounceValue;
     }
-        
-     protected void TakeDamage()
+
+    protected void TakeDamage()
     {
         health -= damageValue;
     }

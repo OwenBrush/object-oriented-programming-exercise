@@ -16,7 +16,7 @@ public class Player : Unit
 
     protected override void ResolveUnitCollision(Collision collision)
     {
-        base.ResolveUnitCollision(collision);
+        Bounce(collision);
     }
 
     protected override void ResolveWallCollision(Collision collision)

@@ -26,6 +26,7 @@ public class Player : Unit
 
     protected override void UnitDeath()
     {
-        base.UnitDeath();
+        GameManager.Instance.EndGame();
+        Destroy(gameObject);
     }
 }

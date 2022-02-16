@@ -50,6 +50,9 @@ public class Unit : MonoBehaviour
     protected void TakeDamage()
     {
         health -= damageValue;
+        Color color = gameObject.GetComponent<MeshRenderer>().material.color;
+        color.a = health;
+        gameObject.GetComponent<MeshRenderer>().material.color = color;
     }
     
     protected virtual void ResolveUnitCollision(Collision collision)

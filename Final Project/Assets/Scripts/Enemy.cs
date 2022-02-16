@@ -16,6 +16,7 @@ public class Enemy : Unit
 
     protected override void UnitDeath()
     {
+        GameManager.Instance.ScorePoint();
         base.UnitDeath();
     }
 }

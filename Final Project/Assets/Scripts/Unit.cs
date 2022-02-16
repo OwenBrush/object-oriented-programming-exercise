@@ -4,28 +4,29 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rb;
+    [SerializeField] protected Rigidbody rb;
     [SerializeField] protected float bounceValue;
     [SerializeField] protected float damageValue;
     [SerializeField] protected float speed;
+    [SerializeField] protected float m_health;
     [SerializeField] protected float health
     {
-        get { return health; }
+        get { return m_health; }
         set
         {
             if (value <= 0f)
             {
-                health = 0;
                 UnitDeath();
             }
             else
             {
-                health = value;
+                m_health = value;
             }
         }
     }
     private void Awake()
     {
+        Debug.Log(health);
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
@@ -41,12 +42,12 @@ public class Unit : MonoBehaviour
         }
 
     }
-  protected void Bounce(Collision collision)
+    protected void Bounce(Collision collision)
     {
         rb.AddForce(collision.contacts[0].normal * bounceValue);
     }
         
-        protected void TakeDamage()
+     protected void TakeDamage()
     {
         health -= damageValue;
     }

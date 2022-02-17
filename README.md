@@ -1,7 +1,10 @@
 # Final project for the unity junior programmer course
 
+### Play the game here:
+-https://play.unity.com/mg/other/build-9nj
+
 ### Objective:
-- Small project in the span of a day
+- Small project in the span of a few hours
 - Incorporate the 4 principals of object oriented programming
     - Abstraction
     - Inheritance
@@ -10,7 +13,7 @@
 
 ### Concept:
 - Arena game where primitive objects move and bounce around an enclosed space
-- If player hits wall, take damage.  
+- If player hits wall, player takes damage.  
 - If enemy hits wall, it bounces and gain momentum
 - if enemy hits player, it takes damage
 
@@ -18,6 +21,6 @@
 - Abstraction & Encapsulation:
   - Code will be written with these principals in mind
 - Inheritance & Polymorphism:
-  - Player and Enemy objects will inherite from a common parent class, and have different behaviour upon hitting a wall.
+  - Player and Enemy objects will inherite from a common parent class, and have different behaviour.
 
 ![plot](class_map.png)

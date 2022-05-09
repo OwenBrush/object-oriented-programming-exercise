@@ -9,13 +9,13 @@
     - Abstraction
     - Inheritance
     - Polymorphism
-    - Encaspulation
+    - Encapsulation
 
 ### Concept:
 - Arena game where primitive objects move and bounce around an enclosed space
 - If player hits wall, player takes damage.  
-- If enemy hits wall, it bounces and gain momentum
-- if enemy hits player, it takes damage
+- If enemy hits wall, it bounces and gains momentum
+- if player hits enemy, enemy takes damage
 
 ### Aproach:
 - Abstraction & Encapsulation:
